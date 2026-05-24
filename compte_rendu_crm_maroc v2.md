@@ -2,6 +2,11 @@
 
 ## Les Produits CRM Déployés au Maroc : État des Lieux, Analyse Statistique et Perspectives
 
+
+
+![Texte alternatif](https://raw.githubusercontent.com/LarhlimiUhp/IA/main/Support%20IA/LARHLIMI.jpg)
+
+
 ---
 
 **Date de rédaction :** Mai 2026
