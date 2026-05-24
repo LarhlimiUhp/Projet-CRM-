@@ -5,7 +5,7 @@
 ---
 
 **Date de rédaction :** Mai 2026
-**Auteur :** [À compléter]
+**Auteur :** [MIDC]
 **Contexte :** Étude de marché sur l'adoption des solutions de gestion de la relation client (CRM) par les entreprises marocaines
 
 ---
