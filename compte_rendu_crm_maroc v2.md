@@ -4,9 +4,9 @@
 
 
 
-![Texte alternatif](https://raw.githubusercontent.com/LarhlimiUhp/IA/main/Support%20IA/LARHLIMI.jpg)
+![Texte alternatif](https://github.com/LarhlimiUhp/Projet-CRM-/blob/main/LARHLIMI.jpg)
 
-
+https://github.com/LarhlimiUhp/Projet-CRM-/blob/main/LARHLIMI.jpg
 ---
 
 **Date de rédaction :** Mai 2026
