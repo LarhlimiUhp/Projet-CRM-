@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Genius - Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- 1. INTERFACE DE CONNEXION (S'affiche par défaut) -->
+    <div id="login-page" class="min-h-screen bg-slate-900 flex items-center justify-center p-6">
+        <div class="max-w-md w-full bg-white rounded-3xl p-10 shadow-2xl transition-all transform hover:scale-[1.01]">
+            <div class="flex flex-col items-center mb-10 text-center">
+                <div class="bg-purple-600 p-4 rounded-2xl text-white mb-4 shadow-xl shadow-purple-200">
+                    <i data-lucide="zap" fill="currentColor" class="w-10 h-10"></i>
+                </div>
+                <h1 class="text-3xl font-black text-slate-800">CRM Genius</h1>
+                <p class="text-slate-400 font-medium mt-2">Accédez à votre espace de vente</p>
+            </div>
+            <div class="space-y-4">
+                <input type="email" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm outline-none focus:ring-2 focus:ring-purple-500" placeholder="Email" value="admin@crm.com">
+                <input type="password" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm outline-none focus:ring-2 focus:ring-purple-500" placeholder="Mot de passe" value="password">
+                <button onclick="login()" class="w-full py-4 bg-purple-700 text-white rounded-xl font-black shadow-xl shadow-purple-200 hover:bg-purple-800 transition-all active:scale-95">
+                    Se connecter
+                </button>
+            </div>
+            <p class="text-center text-[10px] text-slate-400 mt-8 uppercase tracking-widest font-bold">Powered by Google AI</p>
+        </div>
+    </div>
+
+    <!-- 2. INTERFACE PRINCIPALE (Cachée au départ) -->
+    <div id="main-app" class="hidden min-h-screen flex flex-col">
+        <!-- Navbar -->
+        <nav class="h-14 bg-slate-900 text-white flex items-center justify-between px-6 fixed w-full z-50">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2 font-black text-xl tracking-tighter">
+                    <div class="bg-purple-600 p-1 rounded text-white"><i data-lucide="zap" fill="currentColor" class="w-5 h-5"></i></div>
+                    <span>CRM GENIUS</span>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-sm font-bold border-b-2 border-purple-500 pb-1 cursor-pointer">Ventes</span>
+                    <span class="text-sm font-bold text-slate-400 hover:text-white cursor-pointer transition">Analyses</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-5 text-slate-400">
+                <i data-lucide="search" class="w-5 h-5 cursor-pointer hover:text-white"></i>
+                <i data-lucide="bell" class="w-5 h-5 cursor-pointer hover:text-white"></i>
+                <div class="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold text-xs ring-2 ring-slate-800">JD</div>
+            </div>
+        </nav>
+
+        <!-- Filtres -->
+        <div class="mt-14 px-6 py-3 border-b bg-white flex gap-2 items-center">
+            <button class="px-4 py-1.5 bg-purple-700 text-white rounded-full text-xs font-bold shadow-lg shadow-purple-100">Tout le pipeline</button>
+            <button class="px-4 py-1.5 bg-slate-100 text-slate-500 rounded-full text-xs font-bold hover:bg-slate-200 transition">Deals > 10k€</button>
+            <button class="px-4 py-1.5 bg-slate-100 text-slate-500 rounded-full text-xs font-bold hover:bg-slate-200 transition">En retard</button>
+            <div class="ml-auto flex items-center gap-2 text-purple-700 font-bold text-xs cursor-pointer hover:bg-purple-50 p-2 rounded-lg">
+                <i data-lucide="plus" class="w-4 h-4"></i> NOUVEAU
+            </div>
+        </div>
+
+        <!-- Kanban Board -->
+        <div class="flex-1 overflow-x-auto p-6 flex gap-6 items-start bg-slate-50">
+            <!-- Colonne 1 -->
+            <div class="w-72 flex-shrink-0">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center text-[10px] font-black uppercase text-slate-400 mb-1 tracking-widest">
+                        <span>Nouveau</span>
+                        <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xl font-black text-slate-800">24 000 €</div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-purple-500 cursor-pointer transition-all">
+                        <div class="text-[10px] font-bold text-slate-400 mb-1 uppercase tracking-tighter">Luxe Global</div>
+                        <div class="font-bold text-slate-800 leading-tight mb-3">Refonte Site Ecommerce</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-slate-700">15 000 €</span>
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-500 ring-4 ring-red-50"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-purple-500 cursor-pointer transition-all">
+                        <div class="text-[10px] font-bold text-slate-400 mb-1 uppercase tracking-tighter">SafeNet</div>
+                        <div class="font-bold text-slate-800 leading-tight mb-3">Audit Sécurité</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-slate-700">9 000 €</span>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-500 ring-4 ring-green-50"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne 2 -->
+            <div class="w-72 flex-shrink-0">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center text-[10px] font-black uppercase text-slate-400 mb-1 tracking-widest">
+                        <span>Qualifié</span>
+                        <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xl font-black text-slate-800">4 500 €</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-purple-500 cursor-pointer transition-all">
+                    <div class="text-[10px] font-bold text-slate-400 mb-1 uppercase tracking-tighter">BioTech</div>
+                    <div class="font-bold text-slate-800 leading-tight mb-3">Contrat Maintenance</div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-slate-700">4 500 €</span>
+                        <div class="w-2.5 h-2.5 rounded-full bg-orange-500 ring-4 ring-orange-50"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne 3 -->
+            <div class="w-72 flex-shrink-0">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center text-[10px] font-black uppercase text-slate-400 mb-1 tracking-widest">
+                        <span>Proposition</span>
+                        <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xl font-black text-slate-800">28 000 €</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-purple-500 hover:shadow-lg transition-all">
+                    <div class="text-[10px] font-bold text-slate-400 mb-1 uppercase tracking-tighter">Finra</div>
+                    <div class="font-bold text-slate-800 leading-tight mb-3">Migration Cloud Azure</div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-purple-700 font-black">28 000 €</span>
+                        <div class="w-2.5 h-2.5 rounded-full bg-green-500 ring-4 ring-green-50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialisation des icônes Lucide
+        lucide.createIcons();
+
+        // Fonction pour simuler la connexion
+        function login() {
+            const loginPage = document.getElementById('login-page');
+            const mainApp = document.getElementById('main-app');
+            
+            // Animation de sortie
+            loginPage.style.opacity = '0';
+            loginPage.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                loginPage.classList.add('hidden');
+                mainApp.classList.remove('hidden');
+                // Ré-initialiser les icônes pour le nouveau contenu
+                lucide.createIcons();
+            }, 300);
+        }
+    </script>
+</body>
+</html>
